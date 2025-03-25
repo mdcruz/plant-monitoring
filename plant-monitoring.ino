@@ -1,13 +1,11 @@
-#include <Arduino.h>
 #include <PromLokiTransport.h>
 #include <PrometheusArduino.h>
 
 #include "config.h"
 #include "certificates.h"
 
-// Define the pin
-int sensorPin = 4;
-
+// Define sensor values
+int sensorPin = 11;
 int sensorValue = 0;
 
 // Prometheus client and transport
@@ -78,9 +76,9 @@ void loop() {
   // Check if the soil is dry
   if (sensorValue > 500) {
     Serial.print(sensorValue);
-    Serial.println(" - Status: Soil is too dry - time to water!");
+    Serial.println(" - Status: Soil is too dry - Water the plant, Gabrielle!");
   } else {
-     Serial.print(sensorValue);
+    Serial.print(sensorValue);
     Serial.println(" - Status: Soil is perfect!");
   }
 
@@ -104,3 +102,4 @@ void loop() {
   // Wait before taking another reading
   delay(1000);
 }
+
