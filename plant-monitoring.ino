@@ -76,7 +76,7 @@ void loop() {
   // Check if the soil is dry
   if (sensorValue > 500) {
     Serial.print(sensorValue);
-    Serial.println(" - Status: Soil is too dry - Water the plant, Gabrielle!");
+    Serial.println(" - Status: Soil is too dry - time to water!");
   } else {
     Serial.print(sensorValue);
     Serial.println(" - Status: Soil is perfect!");
@@ -100,6 +100,5 @@ void loop() {
     ts.resetSamples();
 }
   // Wait before taking another reading
-  delay(1000);
+  delay(5000);
 }
-
